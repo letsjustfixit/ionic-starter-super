@@ -6,6 +6,7 @@ import { ContentPage } from '../pages/content/content';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { WelcomePage } from '../pages/welcome/welcome';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -21,7 +22,8 @@ import { User } from '../providers/user';
     ContentPage,
     LoginPage,
     SignupPage,
-    TutorialPage
+    TutorialPage,
+    WelcomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -37,7 +39,8 @@ import { User } from '../providers/user';
     ContentPage,
     LoginPage,
     SignupPage,
-    TutorialPage
+    TutorialPage,
+    WelcomePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

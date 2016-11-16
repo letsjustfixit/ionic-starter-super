@@ -51,7 +51,7 @@ export class TutorialPage {
   }
 
   startApp() {
-    this.navCtrl.push(WelcomePage);
+    this.navCtrl.setRoot(WelcomePage);
   }
 
   onSlideChangeStart(slider) {
