@@ -16,4 +16,8 @@ export class User {
   login(accountInfo: any) : Promise<any> {
     return this.http.post('https://example.com/api/v1/login', accountInfo).toPromise();
   }
+
+  signup(accountInfo: any) : Promise<any> {
+    return this.http.post('https://example.com/api/v1/signup', accountInfo).toPromise();
+  }
 }
