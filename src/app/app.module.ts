@@ -5,8 +5,11 @@ import { MyApp } from './app.component';
 import { ContentPage } from '../pages/content/content';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { ListMasterPage } from '../pages/list-master/list-master';
+import { ListDetailPage } from '../pages/list-detail/list-detail';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -23,7 +26,10 @@ import { User } from '../providers/user';
     LoginPage,
     SignupPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    TabsPage,
+    ListMasterPage,
+    ListDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -40,7 +46,10 @@ import { User } from '../providers/user';
     LoginPage,
     SignupPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    TabsPage,
+    ListMasterPage,
+    ListDetailPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

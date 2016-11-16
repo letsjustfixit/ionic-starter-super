@@ -3,6 +3,7 @@ import { NavController, ToastController } from 'ionic-angular';
 
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
+import { MainPage } from '../../pages/pages';
 import { User } from '../../providers/user';
 
 /*
@@ -38,12 +39,10 @@ export class SignupPage {
     })
   }
 
-  ionViewDidLoad() {
-  }
-
   doSignup() {
     // Attempt to login in through our User service
     this.user.signup(this.account).then((resp) => {
+      this.navCtrl.push(MainPage);
     }, (err) => {
       // Unable to log in
       let toast = this.toastCtrl.create({
