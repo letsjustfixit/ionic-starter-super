@@ -1,3 +1,33 @@
 page-welcome {
+  .scroll-content {
+    $gradient-start: #327eff;
+    $gradient-end: darken($gradient-start, 20%);
 
+    background: $gradient-start;
+    background: -webkit-linear-gradient(-45deg, $gradient-start 0%, $gradient-end 100%);
+    background: linear-gradient(-45deg, $gradient-start 0%, $gradient-end 100%);
+
+    color: #fff;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta {
+  }
+
+  button.login {
+    background-color: white;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #333;
+
+    &.activated {
+      background-color: rgb(220, 220, 220);
+    }
+  }
 }

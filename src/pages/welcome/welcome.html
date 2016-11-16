@@ -1,12 +1,11 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>{{ 'WELCOME_TITLE' | translate }}</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content scroll="false">
+  <div class="content">
+    <div class="center-content">
+      <h1 class="cta">{{ 'WELCOME' | translate }}</h1>
+      <p>
+        <button ion-button block (click)="login()" class="login">{{ 'LOGIN' | translate }}</button>
+        <button ion-button block (click)="signup()" class="signup">{{ 'SIGNUP' | translate }}</button>
+      </p>
+    </div>
+  </div>
 </ion-content>
