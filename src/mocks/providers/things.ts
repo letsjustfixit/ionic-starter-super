@@ -2,8 +2,10 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+import { Thing } from '../../models/thing';
+
 @Injectable()
-export class Thing {
+export class Things {
   defaultItem: any = {
     "name": "Burt Bear",
     "profilePic": "assets/img/speakers/bear.jpg",

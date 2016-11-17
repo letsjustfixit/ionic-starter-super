@@ -1,16 +1,16 @@
 import { User } from './user';
 import { Api } from './api';
 //import { Thing } from './thing';
-import { Thing } from '../mocks/providers/thing';
+import { Things } from '../mocks/providers/things';
 
 export {
   User,
   Api,
-  Thing
+  Things
 };
 
 export const Providers: any[] = [
   User,
   Api,
-  Thing
+  Things
 ]

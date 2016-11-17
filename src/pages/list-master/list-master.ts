@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { ListDetailPage } from '../list-detail/list-detail';
 
-import { Thing } from '../../providers/providers';
+import { Things } from '../../providers/providers';
 
 @Component({
   selector: 'page-list-master',
@@ -12,14 +12,14 @@ import { Thing } from '../../providers/providers';
 export class ListMasterPage {
   items: any[];
 
-  constructor(public navCtrl: NavController, public thing: Thing) {
+  constructor(public navCtrl: NavController, public thing: Things) {
   }
 
   ionViewDidLoad() {
     this.thing.query().subscribe(items => this.items = items.items);
   }
 
-  openItem(item: Thing) {
+  openItem(item: Things) {
     this.navCtrl.push(ListDetailPage, {
       item: item
     });
