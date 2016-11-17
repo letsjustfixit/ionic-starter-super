@@ -44,26 +44,6 @@ export class Things {
          "about": "Ellie is an Elephant."
        },
        {
-         "name": "Gino Giraffe",
-         "profilePic": "assets/img/speakers/giraffe.jpg",
-         "about": "Gino is a Giraffe."
-       },
-       {
-         "name": "Isabella Iguana",
-         "profilePic": "assets/img/speakers/iguana.jpg",
-         "about": "Isabella is an Iguana."
-       },
-       {
-         "name": "Karl Kitten",
-         "profilePic": "assets/img/speakers/kitten.jpg",
-         "about": "Karl is a Kitten."
-       },
-       {
-         "name": "Lionel Lion",
-         "profilePic": "assets/img/speakers/lion.jpg",
-         "about": "Lionel is a Lion."
-       },
-       {
          "name": "Molly Mouse",
          "profilePic": "assets/img/speakers/mouse.jpg",
          "about": "Molly is a Mouse."
@@ -72,16 +52,6 @@ export class Things {
          "name": "Paul Puppy",
          "profilePic": "assets/img/speakers/puppy.jpg",
          "about": "Paul is a Puppy."
-       },
-       {
-         "name": "Rachel Rabbit",
-         "profilePic": "assets/img/speakers/rabbit.jpg",
-         "about": "Rachel is a Rabbit."
-       },
-       {
-         "name": "Ted Turtle",
-         "profilePic": "assets/img/speakers/turtle.jpg",
-         "about": "Ted is a Turtle."
        }
      ];
 
