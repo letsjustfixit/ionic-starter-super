@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, ViewController } from 'ionic-angular';
 
 /*
@@ -12,11 +13,30 @@ import { NavController, ViewController } from 'ionic-angular';
   templateUrl: 'item-create.html'
 })
 export class ItemCreatePage {
+  isReadyToSave: boolean;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {}
+  item: any;
 
-  ionViewDidLoad() {
-    console.log('Hello ItemCreatePage Page');
+  form: FormGroup;
+
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder) {
+    this.form = formBuilder.group({
+      name: ['', Validators.required],
+      about: ['']
+    });
+
+    this.form.valueChanges.subscribe((v) => {
+      this.isReadyToSave = false;
+
+      let val;
+      for(let key in v) {
+        val = v[key];
+        if(val && val !== '') {
+          this.isReadyToSave = true;
+          break;
+        }
+      }
+    });
   }
 
   dismiss() {

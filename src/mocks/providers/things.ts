@@ -12,11 +12,7 @@ export class Things {
   defaultItem: any = {
     "name": "Burt Bear",
     "profilePic": "assets/img/speakers/bear.jpg",
-    "twitter": "ionicframework",
     "about": "Burt is a Bear.",
-    "location": "Everywhere",
-    "email": "burt@example.com",
-    "phone": "+1-541-754-3010"
   };
 
 
@@ -25,119 +21,67 @@ export class Things {
       {
          "name": "Burt Bear",
          "profilePic": "assets/img/speakers/bear.jpg",
-         "twitter": "ionicframework",
-         "about": "Burt is a Bear.",
-         "location": "Everywhere",
-         "email": "burt@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Burt is a Bear."
        },
        {
          "name": "Charlie Cheetah",
          "profilePic": "assets/img/speakers/cheetah.jpg",
-         "twitter": "ionicframework",
-         "about": "Charlie is a Cheetah.",
-         "location": "Everywhere",
-         "email": "charlie@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Charlie is a Cheetah."
        },
        {
          "name": "Donald Duck",
          "profilePic": "assets/img/speakers/duck.jpg",
-         "twitter": "ionicframework",
-         "about": "Donald is a Duck.",
-         "location": "Everywhere",
-         "email": "donald@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Donald is a Duck."
        },
        {
          "name": "Eva Eagle",
          "profilePic": "assets/img/speakers/eagle.jpg",
-         "twitter": "ionicframework",
-         "about": "Eva is an Eagle.",
-         "location": "Everywhere",
-         "email": "eva@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Eva is an Eagle."
        },
        {
          "name": "Ellie Elephant",
          "profilePic": "assets/img/speakers/elephant.jpg",
-         "twitter": "ionicframework",
-         "about": "Ellie is an Elephant.",
-         "location": "Everywhere",
-         "email": "ellie@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Ellie is an Elephant."
        },
        {
          "name": "Gino Giraffe",
          "profilePic": "assets/img/speakers/giraffe.jpg",
-         "twitter": "ionicframework",
-         "about": "Gino is a Giraffe.",
-         "location": "Everywhere",
-         "email": "gino@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Gino is a Giraffe."
        },
        {
          "name": "Isabella Iguana",
          "profilePic": "assets/img/speakers/iguana.jpg",
-         "twitter": "ionicframework",
-         "about": "Isabella is an Iguana.",
-         "location": "Everywhere",
-         "email": "isabella@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Isabella is an Iguana."
        },
        {
          "name": "Karl Kitten",
          "profilePic": "assets/img/speakers/kitten.jpg",
-         "twitter": "ionicframework",
-         "about": "Karl is a Kitten.",
-         "location": "Everywhere",
-         "email": "karl@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Karl is a Kitten."
        },
        {
          "name": "Lionel Lion",
          "profilePic": "assets/img/speakers/lion.jpg",
-         "twitter": "ionicframework",
-         "about": "Lionel is a Lion.",
-         "location": "Everywhere",
-         "email": "lionel@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Lionel is a Lion."
        },
        {
          "name": "Molly Mouse",
          "profilePic": "assets/img/speakers/mouse.jpg",
-         "twitter": "ionicframework",
-         "about": "Molly is a Mouse.",
-         "location": "Everywhere",
-         "email": "molly@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Molly is a Mouse."
        },
        {
          "name": "Paul Puppy",
          "profilePic": "assets/img/speakers/puppy.jpg",
-         "twitter": "ionicframework",
-         "about": "Paul is a Puppy.",
-         "location": "Everywhere",
-         "email": "paul@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Paul is a Puppy."
        },
        {
          "name": "Rachel Rabbit",
          "profilePic": "assets/img/speakers/rabbit.jpg",
-         "twitter": "ionicframework",
-         "about": "Rachel is a Rabbit.",
-         "location": "Everywhere",
-         "email": "rachel@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Rachel is a Rabbit."
        },
        {
          "name": "Ted Turtle",
          "profilePic": "assets/img/speakers/turtle.jpg",
-         "twitter": "ionicframework",
-         "about": "Ted is a Turtle.",
-         "location": "Everywhere",
-         "email": "ted@example.com",
-         "phone": "+1-541-754-3010"
+         "about": "Ted is a Turtle."
        }
      ];
 
