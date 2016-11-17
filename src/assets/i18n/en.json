@@ -24,5 +24,6 @@
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
 
-  "LIST_MASTER_TITLE": "Things"
+  "LIST_MASTER_TITLE": "Things",
+  "ITEM_CREATE_TITLE": "New Thing"
 }

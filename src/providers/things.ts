@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 import { Api } from './api';
 
-import { Thing } from './thing';
+import { Thing } from '../models/thing';
 
 @Injectable()
 export class Things {
@@ -15,6 +15,10 @@ export class Things {
   query() {
     return this.api.get('/things')
       .map(resp => resp.json());
+  }
+
+  add(thing: Thing) {
+
   }
 
 }

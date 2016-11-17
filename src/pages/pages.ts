@@ -5,7 +5,8 @@ import { TabsPage } from './tabs/tabs';
 import { TutorialPage } from './tutorial/tutorial';
 import { WelcomePage } from './welcome/welcome';
 import { ListMasterPage } from './list-master/list-master';
-import { ListDetailPage } from './list-detail/list-detail';
+import { ItemCreatePage } from './item-create/item-create';
+import { ItemDetailPage } from './item-detail/item-detail';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
@@ -20,7 +21,8 @@ export const Pages: any[] = [
   TutorialPage,
   WelcomePage,
   ListMasterPage,
-  ListDetailPage
+  ItemDetailPage,
+  ItemCreatePage
 ];
 
 // The page the user lands on after opening the app and without a session
