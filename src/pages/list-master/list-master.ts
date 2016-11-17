@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { ListDetailPage } from '../list-detail/list-detail';
+
 import { Thing } from '../../providers/providers';
 
 @Component({
@@ -8,7 +10,7 @@ import { Thing } from '../../providers/providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  items: Thing[];
+  items: any[];
 
   constructor(public navCtrl: NavController, public thing: Thing) {
   }
@@ -17,4 +19,9 @@ export class ListMasterPage {
     this.thing.query().subscribe(items => this.items = items.items);
   }
 
+  openItem(item: Thing) {
+    this.navCtrl.push(ListDetailPage, {
+      item: item
+    });
+  }
 }

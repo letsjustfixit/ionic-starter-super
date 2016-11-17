@@ -1,3 +1,10 @@
 page-list-detail {
+  .item-detail img {
+    max-width: 140px;
+    border-radius: 50%;
+  }
 
+  .item-detail p {
+    color: #60646B;
+  }
 }

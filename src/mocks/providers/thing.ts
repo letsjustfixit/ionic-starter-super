@@ -4,6 +4,16 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class Thing {
+  defaultItem: any = {
+    "name": "Burt Bear",
+    "profilePic": "assets/img/speakers/bear.jpg",
+    "twitter": "ionicframework",
+    "about": "Burt is a Bear.",
+    "location": "Everywhere",
+    "email": "burt@example.com",
+    "phone": "+1-541-754-3010"
+  };
+
 
   constructor(public http: Http) {
   }

@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the ListDetail page.
+import { Thing } from '../../providers/providers';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-list-detail',
   templateUrl: 'list-detail.html'
 })
 export class ListDetailPage {
+  item: any;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, navParams: NavParams, thing: Thing) {
+    this.item = navParams.get('item') || thing.defaultItem;
+  }
 
   ionViewDidLoad() {
     console.log('Hello ListDetailPage Page');
