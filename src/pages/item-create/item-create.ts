@@ -25,21 +25,25 @@ export class ItemCreatePage {
       about: ['']
     });
 
+    // Watch the form for changes, and
     this.form.valueChanges.subscribe((v) => {
-      this.isReadyToSave = false;
-
-      let val;
-      for(let key in v) {
-        val = v[key];
-        if(val && val !== '') {
-          this.isReadyToSave = true;
-          break;
-        }
-      }
+      this.isReadyToSave = this.form.valid;
     });
   }
 
-  dismiss() {
+  /**
+   * The user cancelled, so we dismiss without sending data back.
+   */
+  cancel() {
     this.viewCtrl.dismiss();
+  }
+
+  /**
+   * The user is done and wants to create the item, so return it
+   * back to the presenter.
+   */
+  done() {
+    if(!this.form.valid) { return; }
+    this.viewCtrl.dismiss(this.form.value);
   }
 }

@@ -23,6 +23,11 @@ export class ListMasterPage {
 
   addItem() {
     let addModal = this.modalCtrl.create(ItemCreatePage);
+    addModal.onDidDismiss(thing => {
+      if (thing) {
+        this.things.add(thing);
+      }
+    })
     addModal.present();
   }
 
