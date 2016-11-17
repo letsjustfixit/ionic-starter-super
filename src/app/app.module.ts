@@ -1,15 +1,9 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+
 import { MyApp } from './app.component';
-import { ContentPage } from '../pages/content/content';
-import { LoginPage } from '../pages/login/login';
-import { SignupPage } from '../pages/signup/signup';
-import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
-import { WelcomePage } from '../pages/welcome/welcome';
-import { ListMasterPage } from '../pages/list-master/list-master';
-import { ListDetailPage } from '../pages/list-detail/list-detail';
+import { Pages } from '../pages/pages';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -19,18 +13,18 @@ export function createTranslateLoader(http: Http) {
 
 import { User } from '../providers/user';
 
+console.log('Pages', Pages);
+
+let declarations = [
+  MyApp
+].concat(Pages);
+
+let entryComponents = [
+  MyApp
+].concat(Pages);
+
 @NgModule({
-  declarations: [
-    MyApp,
-    ContentPage,
-    LoginPage,
-    SignupPage,
-    TutorialPage,
-    WelcomePage,
-    TabsPage,
-    ListMasterPage,
-    ListDetailPage
-  ],
+  declarations: declarations,
   imports: [
     IonicModule.forRoot(MyApp),
     TranslateModule.forRoot({
@@ -40,17 +34,7 @@ import { User } from '../providers/user';
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    ContentPage,
-    LoginPage,
-    SignupPage,
-    TutorialPage,
-    WelcomePage,
-    TabsPage,
-    ListMasterPage,
-    ListDetailPage
-  ],
+  entryComponents: entryComponents,
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
 
