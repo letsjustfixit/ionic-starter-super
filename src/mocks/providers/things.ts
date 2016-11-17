@@ -7,7 +7,6 @@ import { Thing } from '../../models/thing';
 @Injectable()
 export class Things {
   items: Thing[];
-  extraItems: Thing[];
 
   defaultItem: any = {
     "name": "Burt Bear",
@@ -61,8 +60,12 @@ export class Things {
      }
   }
 
-  add(thing: Thing) {
-    this.items.push(thing);
+  add(item: Thing) {
+    this.items.push(item);
+  }
+
+  delete(item: Thing) {
+    this.items.splice(this.items.indexOf(item));
   }
 
   query() : Observable<any> {

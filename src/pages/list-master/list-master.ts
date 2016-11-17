@@ -31,6 +31,10 @@ export class ListMasterPage {
     addModal.present();
   }
 
+  deleteItem(item) {
+    this.things.delete(item);
+  }
+
   openItem(item: Things) {
     this.navCtrl.push(ListDetailPage, {
       item: item

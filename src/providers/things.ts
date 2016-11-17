@@ -17,8 +17,10 @@ export class Things {
       .map(resp => resp.json());
   }
 
-  add(thing: Thing) {
+  add(item: Thing) {
+  }
 
+  delete(item: Thing) {
   }
 
 }
