@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-/*
-  Generated class for the ListMaster page.
+import { Thing } from '../../providers/providers';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-list-master',
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
+  items: Thing[];
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public thing: Thing) {
+  }
 
   ionViewDidLoad() {
-    console.log('Hello ListMasterPage Page');
+    this.thing.query().subscribe(items => this.items = items.items);
   }
 
 }

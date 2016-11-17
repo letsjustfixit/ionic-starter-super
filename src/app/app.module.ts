@@ -3,7 +3,9 @@ import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { MyApp } from './app.component';
+
 import { Pages } from '../pages/pages';
+import { Providers } from '../providers/providers';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -13,8 +15,6 @@ export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 
-import { User } from '../providers/user';
-
 let declarations = [
   MyApp
 ].concat(Pages);
@@ -22,6 +22,11 @@ let declarations = [
 let entryComponents = [
   MyApp
 ].concat(Pages);
+
+let providers = [
+  // Keep this to enable Ionic's runtime error handling during development
+  { provide: ErrorHandler, useClass: IonicErrorHandler },
+].concat(Providers);
 
 @NgModule({
   declarations: declarations,
@@ -35,10 +40,6 @@ let entryComponents = [
   ],
   bootstrap: [IonicApp],
   entryComponents: entryComponents,
-  providers: [
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-
-    User // A simple User provider, remove if your app doesn't have "Users"
-  ]
+  providers: providers
 })
 export class AppModule {}
