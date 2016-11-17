@@ -7,13 +7,13 @@ import { Pages } from '../pages/pages';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
+// The translate loader needs to know where to load i18n files
+// in Ionic's static asset pipeline.
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
 
 import { User } from '../providers/user';
-
-console.log('Pages', Pages);
 
 let declarations = [
   MyApp
