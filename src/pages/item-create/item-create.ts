@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, ViewController } from 'ionic-angular';
 
+import { Camera } from 'ionic-native';
+
 /*
   Generated class for the ItemCreate page.
 
@@ -21,6 +23,7 @@ export class ItemCreatePage {
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder) {
     this.form = formBuilder.group({
+      profilePic: [''],
       name: ['', Validators.required],
       about: ['']
     });
@@ -29,6 +32,18 @@ export class ItemCreatePage {
     this.form.valueChanges.subscribe((v) => {
       this.isReadyToSave = this.form.valid;
     });
+  }
+
+  getPicture() {
+    Camera.getPicture().then((data) => {
+      this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' +  data });
+    }, (err) => {
+      alert('Unable to take photo');
+    })
+  }
+
+  getProfileImageStyle() {
+    return 'url(' + this.form.controls['profilePic'].value + ')'
   }
 
   /**
