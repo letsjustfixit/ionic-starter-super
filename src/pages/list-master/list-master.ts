@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
-import { ListDetailPage } from '../list-detail/list-detail';
+import { ItemDetailPage } from '../item-detail/item-detail';
 import { ItemCreatePage } from '../item-create/item-create';
 
 import { Thing } from '../../models/thing';
@@ -36,7 +36,7 @@ export class ListMasterPage {
   }
 
   openItem(item: Things) {
-    this.navCtrl.push(ListDetailPage, {
+    this.navCtrl.push(ItemDetailPage, {
       item: item
     });
   }

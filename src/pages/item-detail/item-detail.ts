@@ -15,7 +15,9 @@ export class ItemDetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('Hello ListDetailPage Page');
+    console.log('Hello ItemDetailPage Page');
+
+    
   }
 
 }
