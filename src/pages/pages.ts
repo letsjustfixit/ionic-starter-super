@@ -1,5 +1,6 @@
 import { ContentPage } from './content/content';
 import { LoginPage } from './login/login';
+import { MapPage } from './map/map';
 import { SignupPage } from './signup/signup';
 import { TabsPage } from './tabs/tabs';
 import { TutorialPage } from './tutorial/tutorial';
@@ -16,6 +17,7 @@ import { ItemDetailPage } from './item-detail/item-detail';
 export const Pages: any[] = [
   ContentPage,
   LoginPage,
+  MapPage,
   SignupPage,
   TabsPage,
   TutorialPage,
@@ -26,7 +28,7 @@ export const Pages: any[] = [
 ];
 
 // The page the user lands on after opening the app and without a session
-export const FirstRunPage = ListMasterPage;
+export const FirstRunPage = MapPage;//ListMasterPage;
 
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs
