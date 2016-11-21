@@ -1,12 +1,13 @@
-import { Observable } from 'rxjs';
+import { Observable, Observer, BehaviorSubject, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { Thing } from '../../models/thing';
+import { Item } from '../../models/item';
 
 @Injectable()
-export class Things {
-  items: Thing[];
+export class Items {
+  _items: Item[] = [];
+  items: Observable<Item[]>;
 
   defaultItem: any = {
     "name": "Burt Bear",
@@ -16,6 +17,11 @@ export class Things {
 
 
   constructor(public http: Http) {
+    this.items = Observable.create((observer: Observer<Item[]>) => {
+      observer.next(this._items);
+    })
+
+
     let items = [
       {
          "name": "Burt Bear",
@@ -54,26 +60,20 @@ export class Things {
        }
      ];
 
-     this.items = [];
      for(let item of items) {
-       this.items.push(new Thing(item));
+       this._items.push(new Item(item));
      }
   }
 
-  add(item: Thing) {
-    this.items.push(item);
+  add(item: Item) {
+    this._items.push(item);
   }
 
-  delete(item: Thing) {
-    this.items.splice(this.items.indexOf(item));
+  delete(item: Item) {
+    this._items.splice(this._items.indexOf(item));
   }
 
-  query() : Observable<any> {
-    return new Observable(observer => {
-      observer.next({
-        items: this.items
-      })
-    })
+  getItems() {
+    return this.items;
   }
-
 }

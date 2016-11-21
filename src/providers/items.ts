@@ -4,23 +4,23 @@ import 'rxjs/add/operator/map';
 
 import { Api } from './api';
 
-import { Thing } from '../models/thing';
+import { Item } from '../models/item';
 
 @Injectable()
-export class Things {
+export class Items {
 
   constructor(public http: Http, public api: Api) {
   }
 
   query() {
-    return this.api.get('/things')
+    return this.api.get('/items')
       .map(resp => resp.json());
   }
 
-  add(item: Thing) {
+  add(item: Item) {
   }
 
-  delete(item: Thing) {
+  delete(item: Item) {
   }
 
 }
