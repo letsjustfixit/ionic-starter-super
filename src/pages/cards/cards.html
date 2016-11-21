@@ -11,39 +11,38 @@
 
   <ion-card *ngFor="let item of cardItems">
 
-    <div>
-      <img [src]="item.image">
-    </div>
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="item.user.avatar">
+      </ion-avatar>
+      <h2>{{item.user.name}}</h2>
+      <p>{{item.date}}</p>
+    </ion-item>
+
+    <img [src]="item.image">
 
     <ion-card-content>
-      <h2 class="card-title">
-        {{item.title}}
-      </h2>
-      <p>
-        {{item.desc}}
-      </p>
+      <p>{{item.content}}</p>
     </ion-card-content>
 
-    <ion-row no-padding>
+    <ion-row>
       <ion-col>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='star'></ion-icon>
-          Favorite
-        </button>
+        <button ion-button color="primary" clear small icon-left>
+            <ion-icon name='thumbs-up'></ion-icon>
+            12 Likes
+          </button>
       </ion-col>
-      <ion-col text-center>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='musical-notes'></ion-icon>
-          Listen
-        </button>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-left>
+            <ion-icon name='text'></ion-icon>
+            4 Comments
+          </button>
       </ion-col>
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='share-alt'></ion-icon>
-          Share
-        </button>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
       </ion-col>
     </ion-row>
-
   </ion-card>
 </ion-content>

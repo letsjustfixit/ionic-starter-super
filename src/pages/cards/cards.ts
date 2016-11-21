@@ -13,33 +13,38 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'cards.html'
 })
 export class CardsPage {
-  cardItems: Concert[];
+  cardItems: any[];
 
   constructor(public navCtrl: NavController) {
     this.cardItems = [
       {
-        image: 'assets/img/rundmc-live.png',
-        title: 'Run-D.M.C.',
-        desc: 'The American hip hop group widely acknowledged as one of the most influential acts in the history of hip hop.',
+        user: {
+          avatar: 'assets/img/marty-avatar.png',
+          name: 'Marty McFly'
+        },
+        date: 'November 5, 1955',
+        image: 'assets/img/advance-card-bttf.png',
+        content: 'Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.',
       },
       {
-        image: 'assets/img/queen-live.png',
-        title: 'Queen',
-        desc: 'The British rock band formed in London in 1970, and is considered one of the biggest stadium rock bands in the world.'
+        user: {
+          avatar: 'assets/img/sarah-avatar.png.jpeg',
+          name: 'Sarah Connor'
+        },
+        date: 'May 12, 1984',
+        image: 'assets/img/advance-card-tmntr.jpg',
+        content: 'I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.'
       },
       {
-        image: 'assets/img/badu-live.png',
-        title: 'Erykah Badu',
-        desc: 'American singer-songwriter, record producer, activist, and actress, Badu\'s style is a prime example of neo-soul.'
-      },
-      {
-        image: 'assets/img/nin-live.png',
-        title: 'Nine Inch Nails',
-        desc: 'The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.'
+        user: {
+          avatar: 'assets/img/ian-avatar.png',
+          name: 'Dr. Ian Malcolm'
+        },
+        date: 'June 28, 1990',
+        image: 'assets/img/advance-card-jp.jpg',
+        content: 'Your scientists were so preoccupied with whether or not they could, that they didn\'t stop to think if they should.'
       }
     ];
 
   }
 }
-
-class Concert {}
