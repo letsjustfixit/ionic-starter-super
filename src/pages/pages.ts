@@ -1,3 +1,4 @@
+import { CardsPage } from './cards/cards';
 import { ContentPage } from './content/content';
 import { LoginPage } from './login/login';
 import { MapPage } from './map/map';
@@ -15,6 +16,7 @@ import { ItemDetailPage } from './item-detail/item-detail';
  * can find them. As you add and remove pages, make sure to keep this list up to date.
  */
 export const Pages: any[] = [
+  CardsPage,
   ContentPage,
   LoginPage,
   MapPage,
@@ -28,7 +30,7 @@ export const Pages: any[] = [
 ];
 
 // The page the user lands on after opening the app and without a session
-export const FirstRunPage = ListMasterPage;
+export const FirstRunPage = CardsPage;
 
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs
