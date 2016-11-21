@@ -20,6 +20,8 @@ export class ListMasterPage {
 
     this.currentItems.subscribe((val) => {
       console.log('Observer changed', val);
+    }, err => {
+      console.error('ERR', err);
     })
   }
 

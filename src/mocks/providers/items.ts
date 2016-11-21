@@ -19,6 +19,10 @@ export class Items {
   constructor(public http: Http) {
     this.items = Observable.create((observer: Observer<Item[]>) => {
       observer.next(this._items);
+    });
+
+    this.items.subscribe((v) => {
+      console.log('Internal observalbe changed', v);
     })
 
 
@@ -70,7 +74,7 @@ export class Items {
   }
 
   delete(item: Item) {
-    this._items.splice(this._items.indexOf(item));
+    this._items.splice(this._items.indexOf(item), 1);
   }
 
   getItems() {
