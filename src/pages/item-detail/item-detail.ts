@@ -10,14 +10,11 @@ import { Items } from '../../providers/providers';
 export class ItemDetailPage {
   item: any;
 
-  constructor(public navCtrl: NavController, navParams: NavParams, thing: Items) {
-    this.item = navParams.get('item') || thing.defaultItem;
+  constructor(public navCtrl: NavController, navParams: NavParams, items: Items) {
+    this.item = navParams.get('item') || items.defaultItem;
   }
 
   ionViewDidLoad() {
-    console.log('Hello ItemDetailPage Page');
-
-    
   }
 
 }
