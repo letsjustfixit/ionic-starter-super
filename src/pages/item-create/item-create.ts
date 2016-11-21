@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, ViewController } from 'ionic-angular';
 
-import { Camera } from 'ionic-native';
+import { Camera, CameraOptions } from 'ionic-native';
 
 /*
   Generated class for the ItemCreate page.
@@ -15,6 +15,8 @@ import { Camera } from 'ionic-native';
   templateUrl: 'item-create.html'
 })
 export class ItemCreatePage {
+  @ViewChild('fileInput') fileInput;
+
   isReadyToSave: boolean;
 
   item: any;
@@ -34,12 +36,38 @@ export class ItemCreatePage {
     });
   }
 
+  ionViewDidLoad() {
+
+  }
+
   getPicture() {
-    Camera.getPicture().then((data) => {
-      this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' +  data });
-    }, (err) => {
-      alert('Unable to take photo');
-    })
+    if (Camera['installed']()) {
+      Camera.getPicture({
+        targetWidth: 96,
+        targetHeight: 96
+      }).then((data) => {
+        this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' +  data });
+      }, (err) => {
+        alert('Unable to take photo');
+      })
+    } else {
+      this.fileInput.nativeElement.click();
+    }
+  }
+
+  processWebImage(event) {
+    console.log('WEB IMAGE', event);
+    let input = this.fileInput.nativeElement;
+
+    var reader = new FileReader();
+    reader.onload = (readerEvent) => {
+      input.parentNode.removeChild(input);
+
+      var imageData = (readerEvent.target as any).result;
+      this.form.patchValue({ 'profilePic': imageData });
+    };
+
+    reader.readAsDataURL(event.target.files[0]);
   }
 
   getProfileImageStyle() {
