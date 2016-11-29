@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { Settings } from '../providers/providers';
+
 import { FirstRunPage } from '../pages/pages';
 
 import { TranslateService } from 'ng2-translate/ng2-translate';
@@ -12,7 +14,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 export class MyApp {
   rootPage = FirstRunPage;
 
-  constructor(translate: TranslateService, platform: Platform) {
+  constructor(translate: TranslateService, platform: Platform, settings: Settings) {
     // Set the default language for translation strings, and the current language.
     translate.setDefaultLang('en');
     translate.use('en')

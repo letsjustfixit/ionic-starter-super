@@ -1,11 +1,12 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 
 import { Pages } from '../pages/pages';
-import { Providers } from '../providers/providers';
+import { Settings, Providers } from '../providers/providers';
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -13,6 +14,14 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
+
+export function provideSettings(storage: Storage) {
+  return new Settings(storage, {
+    option1: true,
+    option2: 'Ionitron J. Framework',
+    option3: '3'
+  });
 }
 
 let declarations = [
@@ -24,6 +33,9 @@ let entryComponents = [
 ].concat(Pages);
 
 let providers = [
+  Storage,
+
+  { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
   // Keep this to enable Ionic's runtime error handling during development
   { provide: ErrorHandler, useClass: IonicErrorHandler },
 ].concat(Providers);
