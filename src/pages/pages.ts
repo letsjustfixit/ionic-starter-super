@@ -9,6 +9,7 @@ import { WelcomePage } from './welcome/welcome';
 import { ListMasterPage } from './list-master/list-master';
 import { ItemCreatePage } from './item-create/item-create';
 import { ItemDetailPage } from './item-detail/item-detail';
+import { MenuPage } from './menu/menu';
 
 /**
  * The Pages array lists all of the pages we want to use in our app.
@@ -26,11 +27,12 @@ export const Pages: any[] = [
   WelcomePage,
   ListMasterPage,
   ItemDetailPage,
-  ItemCreatePage
+  ItemCreatePage,
+  MenuPage
 ];
 
 // The page the user lands on after opening the app and without a session
-export const FirstRunPage = CardsPage;
+export const FirstRunPage = MenuPage;
 
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs
