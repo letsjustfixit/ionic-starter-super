@@ -37,7 +37,14 @@ export class Settings {
         this.settings[k] = defaults[k];
       }
     }
-    this.setAll(this.settings);
+    return this.setAll(this.settings);
+  }
+
+  merge(settings: any) {
+    for(let k in settings) {
+      this.settings[k] = settings[k];
+    }
+    return this.save();
   }
 
   setValue(key: string, value: any) {
@@ -51,6 +58,10 @@ export class Settings {
 
   getValue(key: string) {
     return this.storage.get(key);
+  }
+
+  save() {
+    return this.setAll(this.settings);
   }
 
   get allSettings() {
