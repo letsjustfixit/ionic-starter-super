@@ -56,7 +56,6 @@ export class ItemCreatePage {
   }
 
   processWebImage(event) {
-    console.log('WEB IMAGE', event);
     let input = this.fileInput.nativeElement;
 
     var reader = new FileReader();

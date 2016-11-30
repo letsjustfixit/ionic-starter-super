@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 import { Settings } from '../../providers/settings';
 
@@ -18,7 +19,21 @@ export class SettingsPage {
 
   settingsReady = false;
 
-  constructor(public navCtrl: NavController, public settings: Settings) {
+  form: FormGroup;
+
+
+  constructor(public navCtrl: NavController, public settings: Settings, public formBuilder: FormBuilder) {
+    this.form = formBuilder.group({
+      option1: [''],
+      option2: [''],
+      option3: ['']
+    });
+
+    // Watch the form for changes, and
+    this.form.valueChanges.subscribe((v) => {
+      console.log('Changes made');
+    });
+    
     settings.load().then(() => {
       this.settingsReady = true;
       this.options = settings.allSettings;
@@ -29,4 +44,8 @@ export class SettingsPage {
     console.log('Hello SettingsPage Page');
   }
 
+
+  ngOnChanges() {
+    console.log('Ng All Changes');
+  }
 }
