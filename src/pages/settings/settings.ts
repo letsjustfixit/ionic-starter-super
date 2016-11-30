@@ -37,22 +37,6 @@ export class SettingsPage {
               public formBuilder: FormBuilder,
               public navParams: NavParams,
               public translate: TranslateService) {
-    // Build an empty form for the template to render
-    this.form = formBuilder.group({});
-
-    this.page = navParams.get('page') || this.page;
-    this.pageTitleKey = navParams.get('pageTitleKey') || this.pageTitleKey;
-
-    translate.get(this.pageTitleKey).subscribe((res) => {
-      this.pageTitle = res;
-    })
-
-    settings.load().then(() => {
-      this.settingsReady = true;
-      this.options = settings.allSettings;
-
-      this._buildForm();
-    });
   }
 
   _buildForm() {
@@ -79,8 +63,23 @@ export class SettingsPage {
     });
   }
 
-  ionViewDidLoad() {
-    console.log('Hello SettingsPage Page');
+  ionViewWillEnter() {
+    // Build an empty form for the template to render
+    this.form = this.formBuilder.group({});
+
+    this.page = this.navParams.get('page') || this.page;
+    this.pageTitleKey = this.navParams.get('pageTitleKey') || this.pageTitleKey;
+
+    this.translate.get(this.pageTitleKey).subscribe((res) => {
+      this.pageTitle = res;
+    })
+
+    this.settings.load().then(() => {
+      this.settingsReady = true;
+      this.options = this.settings.allSettings;
+
+      this._buildForm();
+    });
   }
 
   ngOnChanges() {
