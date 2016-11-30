@@ -22,7 +22,8 @@ export class SettingsPage {
   form: FormGroup;
 
   profileSettings = {
-    page: 'profile'
+    page: 'profile',
+    pageTitleKey: 'SETTINGS_PAGE_PROFILE'
   };
 
   page: string = 'main';
