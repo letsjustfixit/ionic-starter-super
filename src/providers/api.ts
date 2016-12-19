@@ -28,22 +28,22 @@ export class Api {
       options.search = !options.search && p || options.search;
     }
 
-    return this.http.get(endpoint, options);
+    return this.http.get(this.url + '/' + endpoint, options);
   }
 
   post(endpoint: string, body: any, options?: RequestOptions) {
-    return this.http.post(endpoint, body, options);
+    return this.http.post(this.url + '/' + endpoint, body, options);
   }
 
   put(endpoint: string, body: any, options?: RequestOptions) {
-    return this.http.put(endpoint, body, options);
+    return this.http.put(this.url + '/' + endpoint, body, options);
   }
 
   delete(endpoint: string, body: any, options?: RequestOptions) {
-    return this.http.post(endpoint, body, options);
+    return this.http.post(this.url + '/' + endpoint, body, options);
   }
 
   patch(endpoint: string, body: any, options?: RequestOptions) {
-    return this.http.put(endpoint, body, options);
+    return this.http.put(this.url + '/' + endpoint, body, options);
   }
 }
