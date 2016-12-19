@@ -13,16 +13,10 @@ import { Item } from '../../models/item';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Observable<Item[]>;
+  currentItems: Item[];
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
     this.currentItems = this.items.getItems();
-
-    this.currentItems.subscribe((val) => {
-      console.log('Observer changed', val);
-    }, err => {
-      console.error('ERR', err);
-    })
   }
 
   /**

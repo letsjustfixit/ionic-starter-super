@@ -6,8 +6,7 @@ import { Item } from '../../models/item';
 
 @Injectable()
 export class Items {
-  _items: Item[] = [];
-  items: Observable<Item[]>;
+  items: Item[] = [];
 
   defaultItem: any = {
     "name": "Burt Bear",
@@ -17,15 +16,6 @@ export class Items {
 
 
   constructor(public http: Http) {
-    this.items = Observable.create((observer: Observer<Item[]>) => {
-      observer.next(this._items);
-    });
-
-    this.items.subscribe((v) => {
-      console.log('Internal observalbe changed', v);
-    })
-
-
     let items = [
       {
          "name": "Burt Bear",
@@ -65,16 +55,16 @@ export class Items {
      ];
 
      for(let item of items) {
-       this._items.push(new Item(item));
+       this.items.push(new Item(item));
      }
   }
 
   add(item: Item) {
-    this._items.push(item);
+    this.items.push(item);
   }
 
   delete(item: Item) {
-    this._items.splice(this._items.indexOf(item), 1);
+    this.items.splice(this.items.indexOf(item), 1);
   }
 
   getItems() {
