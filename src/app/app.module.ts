@@ -5,8 +5,38 @@ import { Storage } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 
-import { Pages } from '../pages/pages';
-import { Settings, Providers } from '../providers/providers';
+import { CardsPage } from '../pages/cards/cards';
+import { ContentPage } from '../pages/content/content';
+import { LoginPage } from '../pages/login/login';
+import { MapPage } from '../pages/map/map';
+import { SignupPage } from '../pages/signup/signup';
+import { TabsPage } from '../pages/tabs/tabs';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { ListMasterPage } from '../pages/list-master/list-master';
+import { ItemCreatePage } from '../pages/item-create/item-create';
+import { ItemDetailPage } from '../pages/item-detail/item-detail';
+import { MenuPage } from '../pages/menu/menu';
+import { SettingsPage } from '../pages/settings/settings';
+
+import { User } from '../providers/user';
+import { Api } from '../providers/api';
+import { Settings } from '../providers/settings';
+import { Items } from '../mocks/providers/items';
+
+
+// The page the user lands on after opening the app and without a session
+export const FirstRunPage = TutorialPage;
+
+// The main page the user will see as they use the app over a long period of time.
+// Change this if not using tabs
+export const MainPage = TabsPage;
+
+// The initial root pages for our tabs (remove if not using tabs)
+export const Tab1Root = ListMasterPage;
+export const Tab2Root = ListMasterPage;
+export const Tab3Root = ListMasterPage;
+
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -31,24 +61,66 @@ export function provideSettings(storage: Storage) {
   });
 }
 
-let declarations = [
-  MyApp
-].concat(Pages);
 
-let entryComponents = [
-  MyApp
-].concat(Pages);
+/**
+ * The Pages array lists all of the pages we want to use in our app.
+ * We then take these pages and inject them into our NgModule so Angular
+ * can find them. As you add and remove pages, make sure to keep this list up to date.
+ */
+export function declarations() {
+  return [
+    MyApp,
+    CardsPage,
+    ContentPage,
+    LoginPage,
+    MapPage,
+    SignupPage,
+    TabsPage,
+    TutorialPage,
+    WelcomePage,
+    ListMasterPage,
+    ItemDetailPage,
+    ItemCreatePage,
+    MenuPage,
+    SettingsPage
+  ];
+}
 
-let providers = [
-  Storage,
+export function entryComponents() {
+  return [
+    MyApp,
+    CardsPage,
+    ContentPage,
+    LoginPage,
+    MapPage,
+    SignupPage,
+    TabsPage,
+    TutorialPage,
+    WelcomePage,
+    ListMasterPage,
+    ItemDetailPage,
+    ItemCreatePage,
+    MenuPage,
+    SettingsPage
+  ];
+}
 
-  { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
-  // Keep this to enable Ionic's runtime error handling during development
-  { provide: ErrorHandler, useClass: IonicErrorHandler },
-].concat(Providers);
+export function providers() {
+  return [
+    Storage,
+
+    User,
+    Api,
+    Items,
+
+    { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
+    // Keep this to enable Ionic's runtime error handling during development
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
+  ];
+}
 
 @NgModule({
-  declarations: declarations,
+  declarations: declarations(),
   imports: [
     IonicModule.forRoot(MyApp),
     TranslateModule.forRoot({
@@ -58,7 +130,7 @@ let providers = [
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: entryComponents,
-  providers: providers
+  entryComponents: entryComponents(),
+  providers: providers()
 })
 export class AppModule {}

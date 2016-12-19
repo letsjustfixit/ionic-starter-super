@@ -9,10 +9,3 @@ export {
   Settings,
   Items
 };
-
-export const Providers: any[] = [
-  User,
-  Api,
-  Items
-  // Settings is not included in this list because it needs to be configured separately
-]

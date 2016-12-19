@@ -1,4 +1,3 @@
-import { Observable, Observer, BehaviorSubject, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 

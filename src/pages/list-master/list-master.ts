@@ -1,4 +1,3 @@
-import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
