@@ -62,10 +62,13 @@ export class Items {
     if(!params) {
       return this.items;
     }
-    
+
     return this.items.filter((item) => {
       for(let key in params) {
-        if(item[key].indexOf(params[key]) >= 0) {
+        let field = item[key];
+        if(typeof field == 'string' && field.toLowerCase().indexOf(params[key]) >= 0) {
+          return item;
+        } else if(field == params[key]) {
           return item;
         }
       }
