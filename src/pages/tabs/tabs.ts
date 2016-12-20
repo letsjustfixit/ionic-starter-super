@@ -26,9 +26,4 @@ export class TabsPage {
       this.tab3Title = values['TAB3_TITLE'];
     });
   }
-
-  ionViewDidLoad() {
-    console.log('Hello TabsPage Page');
-  }
-
 }
