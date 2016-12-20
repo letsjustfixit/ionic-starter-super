@@ -9,15 +9,38 @@ import { FirstRunPage } from '../pages/pages';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  template: `<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+  <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
   rootPage = FirstRunPage;
+
+  pages: any[];
 
   constructor(translate: TranslateService, platform: Platform, settings: Settings) {
     // Set the default language for translation strings, and the current language.
     translate.setDefaultLang('en');
     translate.use('en')
+
+    // used for an example of ngFor and navigation
+    this.pages = [
+      { title: 'First Run', component: FirstRunPage }
+    ];
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

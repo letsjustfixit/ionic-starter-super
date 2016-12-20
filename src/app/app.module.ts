@@ -54,44 +54,30 @@ export function provideSettings(storage: Storage) {
  * We then take these pages and inject them into our NgModule so Angular
  * can find them. As you add and remove pages, make sure to keep this list up to date.
  */
+let pages = [
+  MyApp,
+  CardsPage,
+  ContentPage,
+  LoginPage,
+  MapPage,
+  SignupPage,
+  TabsPage,
+  TutorialPage,
+  WelcomePage,
+  ListMasterPage,
+  ItemDetailPage,
+  ItemCreatePage,
+  MenuPage,
+  SettingsPage,
+  SearchPage
+];
+
 export function declarations() {
-  return [
-    MyApp,
-    CardsPage,
-    ContentPage,
-    LoginPage,
-    MapPage,
-    SignupPage,
-    TabsPage,
-    TutorialPage,
-    WelcomePage,
-    ListMasterPage,
-    ItemDetailPage,
-    ItemCreatePage,
-    MenuPage,
-    SettingsPage,
-    SearchPage
-  ];
+  return pages;
 }
 
 export function entryComponents() {
-  return [
-    MyApp,
-    CardsPage,
-    ContentPage,
-    LoginPage,
-    MapPage,
-    SignupPage,
-    TabsPage,
-    TutorialPage,
-    WelcomePage,
-    ListMasterPage,
-    ItemDetailPage,
-    ItemCreatePage,
-    MenuPage,
-    SettingsPage,
-    SearchPage
-  ];
+  return pages;
 }
 
 export function providers() {
