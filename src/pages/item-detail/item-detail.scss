@@ -1,9 +1,14 @@
 page-item-detail {
-  .item-detail img {
-    max-width: 200px;
+  .item-profile {
+    width: 100%;
+    background-size: cover;
+    background-origin: center bottom;
+    height: 250px;
   }
 
-  .item-detail p {
-    color: #60646B;
+  .item-detail {
+    width: 100%;
+    background: white;
+    position: absolute;
   }
 }
