@@ -58,15 +58,26 @@ export class Items {
      }
   }
 
+  query(params?: any) {
+    if(!params) {
+      return this.items;
+    }
+    
+    return this.items.filter((item) => {
+      for(let key in params) {
+        if(item[key].indexOf(params[key]) >= 0) {
+          return item;
+        }
+      }
+      return null;
+    });
+  }
+
   add(item: Item) {
     this.items.push(item);
   }
 
   delete(item: Item) {
     this.items.splice(this.items.indexOf(item), 1);
-  }
-
-  getItems() {
-    return this.items;
   }
 }

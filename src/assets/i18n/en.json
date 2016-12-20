@@ -5,6 +5,10 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
+  "TAB1_TITLE": "Items",
+  "TAB2_TITLE": "Favorites",
+  "TAB3_TITLE": "Search",
+
   "MAP_TITLE": "Map",
 
   "TUTORIAL_SLIDE1_TITLE": "Welcome to the Ionic Super Starter",
@@ -38,5 +42,7 @@
   "ITEM_CREATE_TITLE": "New Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
-  "CARDS_TITLE": "Social"
+  "CARDS_TITLE": "Social",
+
+  "SEARCH_TITLE": "Search"
 }

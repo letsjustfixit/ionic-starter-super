@@ -18,25 +18,12 @@ import { ItemCreatePage } from '../pages/item-create/item-create';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { MenuPage } from '../pages/menu/menu';
 import { SettingsPage } from '../pages/settings/settings';
+import { SearchPage } from '../pages/search/search';
 
 import { User } from '../providers/user';
 import { Api } from '../providers/api';
 import { Settings } from '../providers/settings';
 import { Items } from '../mocks/providers/items';
-
-
-// The page the user lands on after opening the app and without a session
-export const FirstRunPage = TutorialPage;
-
-// The main page the user will see as they use the app over a long period of time.
-// Change this if not using tabs
-export const MainPage = TabsPage;
-
-// The initial root pages for our tabs (remove if not using tabs)
-export const Tab1Root = ListMasterPage;
-export const Tab2Root = ListMasterPage;
-export const Tab3Root = ListMasterPage;
-
 
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
 
@@ -82,7 +69,8 @@ export function declarations() {
     ItemDetailPage,
     ItemCreatePage,
     MenuPage,
-    SettingsPage
+    SettingsPage,
+    SearchPage
   ];
 }
 
@@ -101,7 +89,8 @@ export function entryComponents() {
     ItemDetailPage,
     ItemCreatePage,
     MenuPage,
-    SettingsPage
+    SettingsPage,
+    SearchPage
   ];
 }
 

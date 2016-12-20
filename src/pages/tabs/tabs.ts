@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TranslateService } from 'ng2-translate/ng2-translate';
 
 import { Tab1Root } from '../pages';
 import { Tab2Root } from '../pages';
 import { Tab3Root } from '../pages';
 
-/*
-  Generated class for the Tabs page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-tabs',
   templateUrl: 'tabs.html'
@@ -20,7 +15,17 @@ export class TabsPage {
   tab2Root: any = Tab2Root;
   tab3Root: any = Tab3Root;
 
-  constructor(public navCtrl: NavController) {}
+  tab1Title = " ";
+  tab2Title = " ";
+  tab3Title = " ";
+
+  constructor(public navCtrl: NavController, public translateService: TranslateService) {
+    translateService.get(['TAB1_TITLE', 'TAB2_TITLE', 'TAB3_TITLE']).subscribe(values => {
+      this.tab1Title = values['TAB1_TITLE'];
+      this.tab2Title = values['TAB2_TITLE'];
+      this.tab3Title = values['TAB3_TITLE'];
+    });
+  }
 
   ionViewDidLoad() {
     console.log('Hello TabsPage Page');

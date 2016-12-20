@@ -12,8 +12,8 @@ export class Items {
   constructor(public http: Http, public api: Api) {
   }
 
-  query() {
-    return this.api.get('/items')
+  query(params?: any) {
+    return this.api.get('/items', params)
       .map(resp => resp.json());
   }
 
