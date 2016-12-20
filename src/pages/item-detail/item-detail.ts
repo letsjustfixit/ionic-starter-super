@@ -30,9 +30,10 @@ export class ItemDetailPage {
 
   onScroll(ev: ScrollEvent) {
     ev.domWrite(() => {
+      console.log('SCROLL', -ev.scrollTop);
       // DOM writes must go within domWrite()
       // to prevent any layout thrashing
-      this.profilePic.nativeElement.style.transform = `translateY(${-ev.scrollTop}px)`;
+      //this.profilePic.nativeElement.style.transform = `translateY(${-ev.scrollTop}px)`;
 
       if(ev.scrollTop >= 0){
         this.translateAmt = ev.scrollTop / 2;
